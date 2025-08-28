@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Luxurious+Script&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bart & Bea</title>
+<style>
+  :root{
+    --ink:#D0E69E;
+    --silver:#c0c0c0;
+    --silver-deep:#a6a6a6;
+    --silver-soft:#e9e9ee;
+    --white:#ffffff;
+    --leaf:#cfe7db;     /* heel subtiel lentegroen */
+    --petal:#f3f6f9;    /* koele, frisse nuance voor diepte */
+  }
+
+  /* Basis */
+  html,body{height:100%}
+  body{
+    margin:0;
+    color:var(--ink);
+    background:
+		radial-gradient(650px 280px at 90% -20%, rgba(224,241,187,0.25), transparent 60%),
+		linear-gradient(135deg, #F0F9E5 0%, #FFFDF0 50%, #F0F9E5 100%);
+    font-family: "Baskervville", sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    scroll-behavior:smooth;
+  }
+
+  /* Container / kaarten */
+  .wrap{max-width:980px;margin:0 auto;padding:24px}
+  section.card{
+    background:var(--white);
+    border:1px solid var(--silver-soft);
+    border-radius:20px;
+    box-shadow:0 12px 24px rgba(0,0,0,0.06);
+    padding:24px 22px;
+    margin:20px 0;
+  }
+.luxurious-script-regular {
+  font-family: "Luxurious Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.3;
+}
+// <weight>: Use a value from 400 to 700
+// <uniquifier>: Use a unique and descriptive class name
+
+.baskervville-<uniquifier> {
+  font-family: "Baskervville", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.size-large { font-size: 6em; }
+.size-medium { font-size: 2em; }
+.size-small { font-size: 1.5em; }
+
+h1.luxurious-script-regular {
+  font-size: 6em;   /* desktop */
+  line-height: 0.9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobiel (max 600px breed) */
+@media (max-width: 600px) {
+  h1.luxurious-script-regular {
+    font-size: 3em;  /* kleiner op mobiel */
+  }
+}
+
+  /* Header met zilver & subtiele bloemen */
+  header.hero{
+    background:
+    radial-gradient(650px 280px at 90% -20%, rgba(224,241,187,0.25), transparent 60%),
+    linear-gradient(135deg, #E0F1BB 0%, #FEFFE2 50%, #E0F1BB 100%);
+  border-bottom: 1px solid var(--silver-soft);
+  position: relative;
+  overflow: hidden;
+  }
+  header .inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* verticaal centreren */
+  align-items: center;     /* horizontaal centreren */
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 12px 18px; /* compactere padding */
+  text-align: center;
+  min-height: 60px; /* optioneel: zorgt dat header nooit te klein wordt */
+
+  }
+
+  .subtitle{
+    color:#777; font-style:italic; margin:0 auto 8px; max-width:740px;
+  }
+
+  /* Sierlijke zilveren divider met inline SVG */
+  .divider{
+    display:flex; justify-content:center; margin:18px 0 0;
+  }
+  .divider svg{opacity:.6}
+
+  /* Koptitels */
+  h2{
+    
+    font-weight:600; color:#D0E69E; letter-spacing:.5px;
+    text-align:center; margin:6px 0 12px;
+  }
+  h3{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color:#D0E69E; margin:0 0 6px;
+  }
+
+  /* Elegante zilveren knoppen */
+  .btn{
+    display:inline-block; text-decoration:none;
+    padding:14px 26px; border-radius:999px;
+    border:1px solid var(--silver-deep);
+    background:linear-gradient(180deg,#ffffff,#ececf1);
+    color:#4a4a4a; font-weight:700;
+	font-size: 1.0rem;
+	font-family: "Baskerville", serif;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,.7);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); box-shadow:0 12px 28px rgba(0,0,0,0.10); }
+  .btn:active{ transform:translateY(0); box-shadow:0 6px 12px rgba(0,0,0,0.10); }
+
+  .btn-silver{
+    background:linear-gradient(180deg,#ffffff 0%, #ececf1 100%);
+    border:1px solid var(--silver-deep);
+  }
+  .btn-group{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+
+  /* Cadeau-knop */
+  .gift{
+    display:inline-block; text-decoration:none;
+    padding:14px 26px; border-radius:999px;
+    border:1px solid var(--silver-deep);
+    background:linear-gradient(180deg,#ffffff,#ececf1);
+    color:#4a4a4a; font-weight:700;
+	font-size: 1.0rem; 
+font-family: "Baskerville", serif; 
+    box-shadow:0 8px 20px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,.7);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .gift:hover{ transform:translateY(-1px); box-shadow:0 12px 28px rgba(0,0,0,0.10); }
+
+  /* Bloemenaccent (heel subtiel) */
+  .floral{
+    position:relative; overflow:hidden; border-radius:18px;
+    background:
+      radial-gradient(18px 10px at 14% 20%, rgba(207,231,219,.45), transparent 60%),
+      radial-gradient(10px 6px  at 18% 26%, rgba(192,192,192,.35), transparent 55%),
+      radial-gradient(24px 14px at 86% 22%, rgba(207,231,219,.35), transparent 65%),
+      radial-gradient(12px 8px  at 82% 30%, rgba(192,192,192,.28), transparent 65%),
+      linear-gradient(0deg, var(--white), var(--white));
+  }
+
+  /* Locatiekaarten */
+  .loc-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:760px){ .loc-grid{ grid-template-columns:1fr 1fr; } }
+  .loc{
+    border:1px solid var(--silver-soft); border-radius:16px; overflow:hidden;
+    background:var(--white); box-shadow:0 8px 18px rgba(0,0,0,0.06);
+  }
+  .loc .meta{ padding:14px 14px 0; text-align:left; }
+  .loc .meta p{ margin:0 0 10px; color:#616161; }
+  iframe.map{ width:100%; height:260px; border:0; display:block; }
+
+  /* Tijdlijn (dagprogramma) */
+  .timeline{
+    position:relative; margin:8px auto 0; padding-left:0; max-width:720px;
+  }
+  .timeline::before{
+    content:""; position:absolute; left:22px; top:0; bottom:0; width:2px;
+    background:linear-gradient(180deg, var(--silver), rgba(192,192,192,0.25));
+    border-radius:2px;
+  }
+  .tl-item{
+    list-style:none; position:relative; padding:0 0 16px 60px; text-align:left;
+  }
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item .dot{
+    position:absolute; left:13px; top:4px; width:18px; height:18px; border-radius:50%;
+    background:radial-gradient(circle at 40% 35%, #ffffff 0 35%, #e7e7ef 36% 100%);
+    border:1px solid var(--silver);
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  }
+  .tl-time{ font-weight:700; color:#646464; }
+  .tl-title{ margin:.15rem 0 .25rem; font-weight:700; color:#6a6a6a;}
+  .tl-note{ margin:0; color:#6b6b6b; }
+
+  /* Verborgen secties */
+  .hidden{ display:none; }
+
+  /* Kleine typografische accenten */
+  .lead{ font-size:1.1rem; color:#5a5a5a; }
+  .note{ color:#7a7a7a; font-size:.95rem; }
+
+  /* Footer */
+  footer{ text-align:center; color:#7a7a7a; padding:26px 16px 40px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <h1 class="luxurious-script-regular size-large">Bart &amp; Bea</h1>
+    <p class="subtitle">Wat fijn dat je (straks) met ons de liefde komt vieren. Hieronder vind je alle info die je nodig hebt — afgestemd op dag- of avondgasten.</p>
+    <div class="divider" aria-hidden="true">
+      <!-- subtiele zilveren floral divider -->
+      <svg width="220" height="28" viewBox="0 0 220 28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 18 C40 6, 80 6, 110 14" fill="none" stroke="#bfbfbf" stroke-width="1.2"/>
+        <path d="M110 14 C140 22, 180 22, 210 10" fill="none" stroke="#bfbfbf" stroke-width="1.2"/>
+        <circle cx="38" cy="9" r="3.4" fill="#dfe9e3" stroke="#bfbfbf" stroke-width="0.8"/>
+        <circle cx="182" cy="20" r="3.2" fill="#e6eef0" stroke="#bfbfbf" stroke-width="0.8"/>
+        <ellipse cx="95" cy="10" rx="2.4" ry="1.3" fill="#dfe9e3" stroke="#bfbfbf" stroke-width="0.6"/>
+        <ellipse cx="126" cy="18" rx="2.4" ry="1.3" fill="#e6eef0" stroke="#bfbfbf" stroke-width="0.6"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Welkom -->
+  <section class="card floral">
+  <div style="text-align: center;">
+    <h2 class="Baskervville">Welkom</h2>
+    <p class="lead">Lieve familie en vrienden, we kunnen niet wachten om deze dag met jullie te delen. Kies hieronder of je dag- of avondgast bent (staat op je uitnodiging). De cadeaulijst vind je meteen daaronder.</p>
+  </div>
+  </section>
+
+  <!-- Keuze dag/avond -->
+  <section class="card">
+    <h2>Ben je daggast of avondgast?</h2>
+    <div class="btn-group" role="group" aria-label="Gastkeuze" style="text-align: center;">
+      <button class="btn btn-silver" onclick="showSection('dag')" aria-controls="dag">Ik ben daggast</button>
+      <button class="btn btn-silver" onclick="showSection('avond')" aria-controls="avond">Ik ben avondgast</button>
+    </div>
+	<div style="text-align: center;">
+    <p class="note">Na je keuze verschijnt de informatie met locatie en tijden. Je kunt altijd terug omhoog scrollen en opnieuw kiezen.</p>
+  </div>
+  </section>
+
+  <!-- Cadeaulijst knop (extern) -->
+  <section class="card">
+    <h2>Cadeaulijst</h2>
+	<div style="text-align: center;">
+    <p class="lead">Wil je iets bijdragen? Superlief ❤️ Klik hieronder om onze cadeaulijst te bekijken.</p>
+    <p>
+      <!-- VERVANG de href door jullie echte lijstje.nl link -->
+      <a class="gift" href="https://www.lijstje.nl/bartvandenhout" target="_blank" rel="noopener">Bekijk onze cadeaulijst</a>
+    </p>
+    <p class="note">De cadeaulijst opent in een nieuw tabblad.</p>
+</div> 
+ </section>
+
+  <!-- Daggasten: locaties + planning (verborgen tot keuze) -->
+  <section id="dag" class="card hidden">
+    <h2>Daggasten — Locaties & Planning</h2>
+
+    <div class="loc-grid" aria-live="polite">
+      <div class="loc">
+        <div class="meta">
+          <h3>📍 Ceremonie — Waalkade, Nijmegen</h3>
+          <p><strong>Tijd:</strong> 14:00 – 15:00 (inloop vanaf 13:30)</p>
+        </div>
+        <iframe class="map" src="https://www.google.com/maps?q=Waalkade,Nijmegen&output=embed" title="Kaart: Waalkade Nijmegen"></iframe>
+      </div>
+
+      <div class="loc">
+        <div class="meta">
+          <h3>🎉 Feest — Keizer Karelplein, Nijmegen</h3>
+          <p><strong>Tijd:</strong> 20:30 – 01:00</p>
+        </div>
+        <iframe class="map" src="https://www.google.com/maps?q=Keizer+Karelplein,Nijmegen&output=embed" title="Kaart: Keizer Karelplein Nijmegen"></iframe>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3 style="text-align:center; margin-bottom:10px;">Dagprogramma</h3>
+      <ul class="timeline">
+        <li class="tl-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="tl-time">13:30</div>
+          <div class="tl-title">Inloop & welkom</div>
+          <p class="tl-note">Ontvangst aan de Waalkade — kom rustig binnen, neem plaats en geniet van het uitzicht.</p>
+        </li>
+        <li class="tl-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="tl-time">14:00</div>
+          <div class="tl-title">Ceremonie</div>
+          <p class="tl-note">We zeggen “ja” — de mooiste 30 minuten van de dag ✨</p>
+        </li>
+        <li class="tl-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="tl-time">15:15</div>
+          <div class="tl-title">Fotos & toast</div>
+          <p class="tl-note">Een toast op de liefde en een paar foto’s met jullie erbij.</p>
+        </li>
+        <li class="tl-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="tl-time">16:00</div>
+          <div class="tl-title">Borrel</div>
+          <p class="tl-note">Kleine hapjes, fijne muziek en veel bijpraten.</p>
+        </li>
+        <li class="tl-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="tl-time">18:00</div>
+          <div class="tl-title">Diner</div>
+          <p class="tl-note">Samen aan tafel — lekker en gezellig.</p>
+        </li>
+        <li class="tl-item">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="tl-time">20:30</div>
+          <div class="tl-title">Feest</div>
+          <p class="tl-note">Dansen tot in de late uurtjes op het Keizer Karelplein.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Avondgasten: feestlocatie (verborgen tot keuze) -->
+  <section id="avond" class="card hidden">
+    <h2>Avondgasten — Feest</h2>
+    <div class="loc">
+      <div class="meta">
+        <h3>🎉 Feest — Keizer Karelplein, Nijmegen</h3>
+        <p><strong>Tijd:</strong> 20:30 – 01:00</p>
+      </div>
+      <iframe class="map" src="https://www.google.com/maps?q=Keizer+Karelplein,Nijmegen&output=embed" title="Kaart: Keizer Karelplein Nijmegen"></iframe>
+    </div>
+    <div class="card floral" style="margin-top:16px">
+      <h3 style="text-align:center;">Nog een paar woorden</h3>
+      <p class="lead" style="text-align:center;margin:6px 0 0;">
+        “Liefde is elkaar aankijken, én samen dezelfde kant opkijken.”<br/>
+        “Dankbaar voor vandaag, verheugd voor morgen, en samen voor altijd.”
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Met liefde en een vleugje lente ontworpen door Bart 
+</footer>
+
+<script>
+  function showSection(which){
+    // verberg beide
+    document.getElementById('dag').classList.add('hidden');
+    document.getElementById('avond').classList.add('hidden');
+    // toon gevraagde
+    const el = document.getElementById(which);
+    if(el){ el.classList.remove('hidden'); window.scrollTo({top:el.offsetTop - 12, behavior:'smooth'}); }
+  }
+  // (geen externe libraries; alles werkt lokaal)
+  const password = "liefde2025";
+const user = prompt("Voer het wachtwoord in om de site te bekijken:");
+if(user !== password){
+  document.body.innerHTML = "<h2>Wachtwoord incorrect</h2>";
+}
+</script>
+
+</body>
+</html>
